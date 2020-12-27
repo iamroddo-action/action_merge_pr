@@ -1,8 +1,6 @@
 #!/usr/bin/bash
 set -u
 
-echo "::debug::The host is '$INPUT_HOST'"
-
 if [ "$GITHUB_EVENT_NAME" != "pull_request" ]; then
   echo "::debug::The event name was '$GITHUB_EVENT_NAME'"
   exit 0
