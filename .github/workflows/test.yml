@@ -14,4 +14,3 @@ jobs:
         uses: ./
         env:
           GH_ENTERPRISE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_HOST: ${{ env.INPUT_HOST }}

@@ -6,6 +6,7 @@ if [ "$GITHUB_EVENT_NAME" != "pull_request" ]; then
   exit 0
 fi
 
+GH_HOST=INPUT_HOST
 echo "::debug::The GH host is '$GH_HOST'"
 
 # GITHUB_EVENT_TYPE=$(jq --raw-output .action $GITHUB_EVENT_PATH)
