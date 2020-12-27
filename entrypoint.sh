@@ -6,11 +6,13 @@ if [ "$GITHUB_EVENT_NAME" != "pull_request" ]; then
   exit 0
 fi
 
-GITHUB_EVENT_TYPE=$(jq --raw-output .action $GITHUB_EVENT_PATH)
+echo "::debug::The GH host is '$GH_HOST'"
 
-if [ "$GITHUB_EVENT_TYPE" != "opened" ] || [ "$GITHUB_EVENT_TYPE" != "reopened" ] ; then
-  echo "::debug::The event type was '$GITHUB_EVENT_TYPE'"
-  exit 0
-fi
+# GITHUB_EVENT_TYPE=$(jq --raw-output .action $GITHUB_EVENT_PATH)
+
+# if [ "$GITHUB_EVENT_TYPE" != "opened" ] || [ "$GITHUB_EVENT_TYPE" != "reopened" ] ; then
+#   echo "::debug::The event type was '$GITHUB_EVENT_TYPE'"
+#   exit 0
+# fi
 
 exit 0
