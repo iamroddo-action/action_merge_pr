@@ -16,8 +16,8 @@ echo "::debug::REPO_PATH is '$GH_REPO'"
 PR_NUMBER=$(jq --raw-output .number $GITHUB_EVENT_PATH)
 echo "::debug::PR_NUMBER is '$PR_NUMBER'"
 
-OUTPUT=$(env|GH)
-echo "::debug::Output of 'env|GH' is: '$OUTPUT'"
+OUTPUT=$(env)
+echo "::debug::Output of 'env' is: '$OUTPUT'"
 
 OUTPUT=$(gh config set prompt disabled 2>&1)
 echo "::debug::Output of 'gh config set prompt disabled' is: '$OUTPUT'"
