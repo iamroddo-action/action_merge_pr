@@ -13,4 +13,4 @@ jobs:
       - name: Automerge a PR
         uses: ./
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
