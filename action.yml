@@ -6,6 +6,15 @@ inputs:
   repo-token:
     description: "The GITHUB_TOKEN used to authenticate to the repository"
     required: true
+  host:
+    description: "The GitHub host"
+    required: false
+    default: "github.tools.sap"
+  org:
+    description: "The GitHub organisation"
+    required: false
+    default: "netinfra"
+
 runs:
   using: "docker"
   image: "Dockerfile"

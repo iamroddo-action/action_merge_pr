@@ -16,4 +16,4 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 && 
   apt install gh -y
 
 COPY entrypoint.sh /
-ENTRYPOINT ["entrypoint.sh"]
+# ENTRYPOINT ["/entrypoint.sh"]
