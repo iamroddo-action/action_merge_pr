@@ -16,6 +16,6 @@ echo "::debug::GH_HOST is '$GH_HOST'"
 echo "::debug::REPO_PATH is '$GH_REPO'"
 # echo "::debug::EVENT_LOG is '$EVENT_LOG'"
 echo "::debug::PR_NUMBER is '$PR_NUMBER'"
-gh pr merge $PR_NUMBER
+gh pr merge $PR_NUMBER -sd
 
 exit 0
