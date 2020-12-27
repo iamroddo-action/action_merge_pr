@@ -7,10 +7,10 @@ set -u
 # fi
 
 GH_HOST=$INPUT_HOST
-echo "::debug::GH_HOST is '$GH_HOST'"
-echo "::debug::GITHUB_EVENT_PATH is '$GITHUB_EVENT_PATH'"
-
 REPO=$(jq --raw-output .pull_request.base.repo.full_name $GITHUB_EVENT_PATH)
-echo "::debug::The REPO is '$REPO'"
+REPO_PATH="${GH_HOST}/${REPO}"
+echo "::debug::GH_HOST is '$GH_HOST'"
+echo "::debug::REPO is '$REPO'"
+echo "::debug::REPO_PATH is '$REPO_PATH'"
 
 exit 0
