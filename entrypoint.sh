@@ -16,13 +16,10 @@ echo "::debug::REPO_PATH is '$GH_REPO'"
 PR_NUMBER=$(jq --raw-output .number $GITHUB_EVENT_PATH)
 echo "::debug::PR_NUMBER is '$PR_NUMBER'"
 
-OUTPUT=$(env)
-echo "::debug::Output of 'env' is: '$OUTPUT'"
-
 OUTPUT=$(gh config set prompt disabled 2>&1)
 echo "::debug::Output of 'gh config set prompt disabled' is: '$OUTPUT'"
 
-OUTPUT=$(gh pr merge $PR_NUMBER --squash 2>&1)
-echo "::debug::Output of 'gh pr merge $PR_NUMBER --squash' is: '$OUTPUT'"
+OUTPUT=$(gh pr merge $PR_NUMBER --squash -R $GH_REPO 2>&1)
+echo "::debug::Output of 'gh pr merge $PR_NUMBER --squash -R $GH_REPO ' is: '$OUTPUT'"
 
 exit 0
