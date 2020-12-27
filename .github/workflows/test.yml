@@ -8,8 +8,8 @@ jobs:
     runs-on:
       - self-hosted
     steps:
-      # - name: Get the source
-      #   uses: actions/checkout@v2
+      - name: Get the source
+        uses: actions/checkout@v2
       - name: Automerge a PR
         uses: ./
         env:
