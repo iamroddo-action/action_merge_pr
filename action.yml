@@ -3,9 +3,6 @@ name: "Automerge pull request"
 description: "Automatically merges a GitHub pull request that has passed checks"
 author: "Rod Oliver"
 inputs:
-  repo-token:
-    description: "The GITHUB_TOKEN used to authenticate to the repository"
-    required: true
   host:
     description: "The GitHub host"
     required: false
@@ -18,5 +15,3 @@ inputs:
 runs:
   using: "docker"
   image: "Dockerfile"
-  args:
-    - ${{ inputs.rep-token }}
