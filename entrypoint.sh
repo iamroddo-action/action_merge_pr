@@ -6,10 +6,6 @@ if [ "$GITHUB_EVENT_NAME" != "pull_request" ]; then
   exit 0
 fi
 
-OUTPUT=$(jq --raw-output . $GITHUB_EVENT_PATH)
-echo "::debug::OUTPUT is '$OUTPUT'"
-exit 0
-
 GH_HOST=$INPUT_HOST
 echo "::debug::GH_HOST is '$GH_HOST'"
 
