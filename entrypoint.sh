@@ -1,10 +1,10 @@
 #!/usr/bin/bash
 set -u
 
-# if [ "$GITHUB_EVENT_NAME" != "pull_request" ]; then
-#   echo "::debug::The event name was '$GITHUB_EVENT_NAME'"
-#   exit 0
-# fi
+if [ "$GITHUB_EVENT_NAME" != "pull_request" ]; then
+  echo "::debug::The event name was '$GITHUB_EVENT_NAME'"
+  exit 0
+fi
 
 GH_HOST=$INPUT_HOST
 echo "::debug::GH_HOST is '$GH_HOST'"
@@ -17,7 +17,7 @@ PR_NUMBER=$(jq --raw-output .number $GITHUB_EVENT_PATH)
 echo "::debug::PR_NUMBER is '$PR_NUMBER'"
 
 gh config set prompt disabled
-OUTPUT=$(gh pr merge $PR_NUMBER --squash -R $GH_REPO -d 2>&1)
+OUTPUT=$(gh pr merge $PR_NUMBER --squash -R $GH_REPO 2>&1)
 echo "::debug::Output of 'gh pr merge $PR_NUMBER --squash -R $GH_REPO ' is: '$OUTPUT'"
 
 exit 0
