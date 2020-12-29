@@ -17,6 +17,7 @@ PR_NUMBER=$(jq --raw-output .number $GITHUB_EVENT_PATH)
 echo "::debug::PR_NUMBER is '$PR_NUMBER'"
 
 gh config set prompt disabled
+if [ "$GITHUB_EVENT_NAME" != "pull_request" ]; then
 OUTPUT=$(gh pr merge $PR_NUMBER --squash -R $GH_REPO 2>&1)
 echo "::debug::Output of 'gh pr merge $PR_NUMBER --squash -R $GH_REPO ' is: '$OUTPUT'"
 

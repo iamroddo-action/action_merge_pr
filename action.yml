@@ -11,6 +11,10 @@ inputs:
     description: "The GitHub organisation"
     required: false
     default: "netinfra"
+  delete_branch:
+    description: "Deletes branch after merge"
+    required: false
+    default: false
 
 runs:
   using: "docker"
