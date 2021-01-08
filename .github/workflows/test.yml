@@ -18,4 +18,4 @@ jobs:
       - name: Automerge a PR
         uses: ./
         env:
-          GH_ENTERPRISE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
