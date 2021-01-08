@@ -6,11 +6,11 @@ inputs:
   host:
     description: "The GitHub host"
     required: false
-    default: "github.tools.sap"
+    default: "github.com"
   org:
     description: "The GitHub organisation"
     required: false
-    default: "netinfra"
+    default: "iamroddo-action"
   delete_branch:
     description: "Deletes branch after merge"
     required: false
