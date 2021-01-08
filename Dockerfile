@@ -4,7 +4,7 @@ LABEL "com.github.actions.name"="Automerge pull request"
 LABEL "com.github.actions.description"="Automatically merges a GitHub pull request that has passed checks"
 
 LABEL version="0.1.0"
-LABEL repository="https://github.tools.sap/netinfra/action_merge_pr"
+LABEL repository="https://github.com/iamroddo-action/action_merge_pr"
 LABEL maintainer="Rod Oliver"
 
 RUN apt update && \
