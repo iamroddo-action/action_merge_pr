@@ -8,7 +8,7 @@ REPO=$(jq --raw-output .pull_request.base.repo.full_name $GITHUB_EVENT_PATH)
 GH_REPO="${GH_HOST}/${REPO}"
 echo "::debug::REPO_PATH is '$GH_REPO'"
 
-PR_NUMBER=$(jq --raw-output .number $GITHUB_EVENT_PATH)
+PR_NUMBER=$(jq --raw-output .pull_request.number $GITHUB_EVENT_PATH)
 echo "::debug::PR_NUMBER is '$PR_NUMBER'"
 
 gh config set prompt disabled
